@@ -1,0 +1,13 @@
+file_format: "1"
+id: holymoly
+name: holymoly
+type: shield
+url: https://github.com/MakotoKurauchi/holymoly
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+siblings:
+  - holymoly_left
+  - holymoly_right
