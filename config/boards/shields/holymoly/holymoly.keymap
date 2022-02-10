@@ -15,7 +15,13 @@
  #define LOWER  1
  #define RAISE  2
  #define ADJUST 3
+
+#define OUT_TOG 0
+#define OUT_USB 1
+#define OUT_BLE 2
+
 &out OUT_BLE
+
 /* NOTE: At the time of the creation of this keymap, there are no specified codes for 'eisuu' and 'kana' input in ZMK.
 However, 'LANG1' and 'LANG2' are fully-functioning candidates for 'kana' and 'eisuu' input respectively.
 As such, those are in use within the default layer at this time.*/
