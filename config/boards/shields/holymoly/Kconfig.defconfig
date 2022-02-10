@@ -18,4 +18,3 @@ config ZMK_SPLIT
 
 endif
 
-static enum zmk_endpoint preferred_endpoint = ZMK_ENDPOINT_USB; /* Used if multiple endpoints are ready */
