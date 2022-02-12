@@ -16,7 +16,6 @@
  #define RAISE  2
  #define ADJUST 3
 
-&out OUT_BLE
 
 /* NOTE: At the time of the creation of this keymap, there are no specified codes for 'eisuu' and 'kana' input in ZMK.
 However, 'LANG1' and 'LANG2' are fully-functioning candidates for 'kana' and 'eisuu' input respectively.
@@ -27,20 +26,44 @@ As such, those are in use within the default layer at this time.*/
               compatible = "zmk,keymap";
  
               default_layer {
- // ---------------------------------------------------------------------------------------------------------------------------------
- // | GRAVE  |   1    |   2    |   3    |   4    |   5    |                                      |   6    |   7    |   8    |   9    |   0    |  DEL   |
- // |  TAB   |   Q    |   W    |   E    |   R    |   T    |                                      |   Y    |   U    |   I    |   O    |   P    |  BSPC  |
- // |  CTRL  |   A    |   S    |   D    |   F    |   G    |                                      |   H    |   J    |   K    |   L    |   ;    |   '    |
- // |  SHIFT |   Z    |   X    |   C    |   V    |   B    |  LBKT  |                    |  RBKT  |   N    |   M    |   ,    |   .    |   /    |  RET   |
- // | ADJUST |  ESC   |  ALT   |  LGUI  | EISUU  | LOWER  | SPACE  |                    |  SPACE | RAISE  |  KANA  |  LEFT  |  DOWN  |  UP    |  RIGHT |
                      bindings = <
-       &kp GRAVE  &kp N1  &kp N2   &kp N3   &kp N4    &kp N5    &kp MINUS        &kp EQUAL &kp N6    &kp N7    &kp N8    &kp N9     &kp N0    &kp DEL
-       &kp TAB    &kp Q   &kp W    &kp E    &kp R     &kp T     &kp LPAR         &kp RPAR  &kp Y     &kp U     &kp I     &kp O      &kp P     &kp BSPC
-       &kp LCTRL  &kp A   &kp S    &kp D    &kp F     &kp G     &trans           &trans    &kp H     &kp J     &kp K     &kp L      &kp SEMI  &kp SQT
-       &kp LSHFT  &kp Z   &kp X    &kp C    &kp V     &kp B     &kp LBKT         &kp RBKT  &kp N     &kp M     &kp COMMA &kp PERIOD &kp SLASH &kp RET
-       &mo ADJUST &kp ESC &kp LALT &kp LGUI &kp LANG2 &mo LOWER &kp SPACE        &kp SPACE &mo RAISE &kp LANG1 &kp LEFT  &kp DOWN   &kp UP    &kp RIGHT
+       &kp GRAVE   &kp N1  &kp N2   &kp N3   &kp N4    &kp N5    &kp MINUS               &kp EQUAL &kp N6    &kp N7    &kp N8    &kp N9     &kp N0    &kp BSPC
+       &kp CAPS    &kp Q   &kp W    &kp E    &kp R     &kp T     &kp LPAR                &kp RPAR  &kp Y     &kp U     &kp I     &kp O      &kp P     &kp SQT
+       &kp TAB     &kp A   &kp S    &kp D    &kp F     &kp G     &kp C_MUTE              &trans    &kp H     &kp J     &kp K     &kp L      &kp SEMI  &kp RET
+       &kp LSHFT   &kp Z   &kp X    &kp C    &kp V     &kp B     &kp C_VOL_DN            &kp C_VOL_UP  &kp N     &kp M     &kp COMMA &kp PERIOD &kp SLASH &kp BSPC
+       &mo RAISE   &mo RAISE &kp LALT &mo LOWER &kp LCTRL  &kp SPACE &kp LGUI            &mo RAISE &kp ESC &kp LCTRL &kp LEFT  &kp DOWN   &kp UP    &kp RIGHT
                      >;
               };
+
+/* Keymap 0: Basic QWERTY layer
+ *
+ * ,---------------------------------------------.           ,---------------------------------------------.
+ * |   `    |  1  |  2  |  3  |  4  |  5  |  -   |           |  =  |  6  |  7  |  8  |  9  |  0  | Backsp |
+ * |--------+-----+-----+-----+-----+------------|           |------+-----+-----+-----+-----+-----+--------|
+ * |  Upcas |  Q  |  W  |  E  |  R  |  T  |  {[  |           |  ]}   |  Y  |  U  |  I  |  O  |  P  |   '    |
+ * |--------+-----+-----+-----+-----+-----|------|           |------|-----+-----+-----+-----+-----+--------|
+ * |  Tab   |  A  |  S  |  D  |  F  |  G  | mute |           | stop |  H  |  J  |  K  |  L  |  ;  |  Enter |
+ * |--------+-----+-----+-----+-----+-----|------|           |------|-----+-----+-----+-----+-----+--------|
+ * | LShift |  Z  |  X  |  C  |  V  |  B  | vol- |           | vol+ |  N  |  M  |  ,  |  .  |  /  |  \     |
+ * `--------+-----+-----+-----+-----+------------'           `------------+-----+-----+-----+-----+--------'
+ *  | fn(4)   |fn(2)| Alt |fn(1)|ctrl | win | spac |           | ESC  |fn(2)|ctrl |Left |Down | Up  | Right |
+ *  `--------------------------------------------'           '--------------------------------------------'
+ *
+ *                                 ,-------------.           ,-------------.
+ *                                 | mute | vol- |           | vol+ | stop |
+ *                                 |------|------|           |------|------|
+ *                                 | spac | win  |           | Fn(2)| ESC  |
+ *                                 '------'------'           '------'------'
+ *
+ */
+
+
+
+
+
+
+
+
               lower_layer {
  // ---------------------------------------------------------------------------------------------------------------------------------
  // |      |      |      |      |      |      |                                  |      |      |      |      |      |      |
