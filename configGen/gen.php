@@ -102,7 +102,7 @@ print("#include <dt-bindings/zmk/ext_power.h>\n");
 print("#include <dt-bindings/zmk/outputs.h>\n");
 
 
-print("  {\n");
+print("/  {\n");
 print("    keymap {\n");
  print('           compatible =  "zmk,keymap" ;'. "\n");
     for ($i = 0; $i < count($layers); $i++) {
