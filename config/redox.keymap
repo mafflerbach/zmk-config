@@ -59,8 +59,8 @@ layer_2 {
 layer_3 {
  bindings = <
 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans 
-&rgb_ug RGB_TOG &trans &trans &trans &trans &trans &trans &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans &trans &rgb_ug RGB_SAD &rgb_ug RGB_BRD &rgb_ug RGB_SPD &trans &trans &trans &trans 
+&rgb_ug RGB_TOG &trans &trans &trans &trans &trans &trans &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI &rgb_ug RGB_COLOR_HSB(200, 100, 50) &rgb_ug RGB_COLOR_HSB(300, 100, 50) &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &rgb_ug RGB_SAD &rgb_ug RGB_BRD &rgb_ug RGB_SPD &rgb_ug RGB_COLOR_HSB(0, 100, 50) &trans &trans &trans 
 &trans &trans &trans &trans &trans &trans &rgb_ug RGB_HUD &rgb_ug RGB_EFR &rgb_ug RGB_EFF &rgb_ug RGB_HUI &trans &trans &trans &trans &trans &trans 
 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans 
 >;
