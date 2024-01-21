@@ -9,6 +9,14 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/rgb.h>
+
+
+&led_strip { 
+	chain-length = <10>; 
+};
+
+
 /  {
     keymap {
            compatible =  "zmk,keymap" ;
@@ -27,7 +35,7 @@ layer_0 {
 layer_1 {
  bindings = <
 &trans &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &trans 
-&trans &kp EXCL &kp AT &kp CRB &kp RBRC &kp BSLH &trans &trans &kp KP_SLASH &kp N7 &kp N8 &kp N9 &kp KP_MINUS &trans 
+&trans &kp EXCL &kp AT &kp LBKT &kp RBRC &kp BSLH &trans &trans &kp KP_SLASH &kp N7 &kp N8 &kp N9 &kp KP_MINUS &trans 
 &trans &kp HASH &kp DLLR &kp LBRC &kp RBKT &kp GRAVE &trans &trans &kp KP_ASTERISK &kp N4 &kp N5 &kp N6 &kp KP_PLUS &trans 
 &trans &kp PRCNT &kp CARET &kp KP_LPAR &kp RPAR &kp GRAVE &kp C_STOP &kp C_PREV &kp C_NEXT &kp C_PP &trans &kp N1 &kp N2 &kp N3 &kp KP_ENTER &trans 
 &trans &trans &trans &trans &trans &trans &trans &trans &trans &kp N0 &kp N0 &kp KP_DOT &kp KP_ENTER &trans 
@@ -39,10 +47,10 @@ layer_1 {
 layer_2 {
  bindings = <
 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans 
-&trans &trans &kp RET &trans &kp WH_U &trans &trans &trans &trans &trans &trans &trans &trans &trans 
-&trans &kp RET &kp RET &kp RET &kp WH_D &trans &trans &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans 
 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &mkp MB1 &mkp MB2 &trans &trans &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans 
 >;
  };
  
@@ -51,9 +59,9 @@ layer_2 {
 layer_3 {
  bindings = <
 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans 
-&kp RGB_TOG &trans &trans &trans &trans &trans &trans &kp RGB_SAI &kp RGB_BRI &kp RGB_SPI &rgb_ug RGB_COLOR_HSB(287,100,75) &rgb_ug RGB_COLOR_HSB(45,30,50) &trans &trans 
-&trans &trans &trans &trans &trans &trans &trans &kp RGB_SAD &kp RGB_BRD &kp RGB_SPD &rgb_ug RGB_COLOR_HSB(346,100,50) &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans &kp RGB_HUD &kp RGB_EFR &kp RGB_EFF &kp RGB_HUI &trans &trans &trans &trans &trans &trans 
+&rgb_ug RGB_TOG &trans &trans &trans &trans &trans &trans &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &rgb_ug RGB_SAD &rgb_ug RGB_BRD &rgb_ug RGB_SPD &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &rgb_ug RGB_HUD &rgb_ug RGB_EFR &rgb_ug RGB_EFF &rgb_ug RGB_HUI &trans &trans &trans &trans &trans &trans 
 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans 
 >;
  };

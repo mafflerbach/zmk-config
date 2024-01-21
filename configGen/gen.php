@@ -16,7 +16,7 @@ $exceptions= [
     "KC_EQL"   => '&kp EQUAL',
     "KC_EXLM"  => '&kp EXCL',
     "KC_GRV"   => '&kp GRAVE',
-    "KC_LCBR"  => '&kp CRB',
+    "KC_LCBR"  => '&kp LBKT',
     "KC_LPRN"  => '&kp KP_LPAR',
     "KC_LSFT"  => '&kp LSHIFT',
     "KC_MFFD"  => '&kp C_NEXT',
@@ -64,20 +64,20 @@ $exceptions= [
     "MO(1)"    => '&mo 1',
     "MO(2)"    => '&mo 2',
     "MO(3)"    => '&mo 3',
-    "RGB_HUD"  => '&kp RGB_HUD',
-    "RGB_HUI"  => '&kp RGB_HUI',
-    "RGB_MOD"  => '&kp RGB_EFF',
-    "RGB_M_G"  => '&rgb_ug RGB_COLOR_HSB(45,30,50)',
-    "RGB_M_P"  => '&rgb_ug RGB_COLOR_HSB(287,100,75)',
-    "RGB_M_R"  => '&rgb_ug RGB_COLOR_HSB(346,100,50)',
-    "RGB_RMOD" => '&kp RGB_EFR',
-    "RGB_SAD"  => '&kp RGB_SAD',
-    "RGB_SAI"  => '&kp RGB_SAI',
-    "RGB_SPD"  => '&kp RGB_SPD',
-    "RGB_SPI"  => '&kp RGB_SPI',
-    "RGB_TOG"  => '&kp RGB_TOG',
-    "RGB_VAD"  => '&kp RGB_BRD',
-    "RGB_VAI"  => '&kp RGB_BRI'
+    "RGB_HUD"  => '&rgb_ug RGB_HUD',
+    "RGB_HUI"  => '&rgb_ug RGB_HUI',
+    "RGB_MOD"  => '&rgb_ug RGB_EFF',
+    "RGB_M_G"  => '&trans',
+    "RGB_M_P"  => '&trans',
+    "RGB_M_R"  => '&trans',
+    "RGB_RMOD" => '&rgb_ug RGB_EFR',
+    "RGB_SAD"  => '&rgb_ug RGB_SAD',
+    "RGB_SAI"  => '&rgb_ug RGB_SAI',
+    "RGB_SPD"  => '&rgb_ug RGB_SPD',
+    "RGB_SPI"  => '&rgb_ug RGB_SPI',
+    "RGB_TOG"  => '&rgb_ug RGB_TOG',
+    "RGB_VAD"  => '&rgb_ug RGB_BRD',
+    "RGB_VAI"  => '&rgb_ug RGB_BRI'
 ];
 
 
@@ -100,6 +100,16 @@ print("#include <dt-bindings/zmk/keys.h>\n");
 print("#include <dt-bindings/zmk/bt.h>\n");
 print("#include <dt-bindings/zmk/ext_power.h>\n");
 print("#include <dt-bindings/zmk/outputs.h>\n");
+print("#include <dt-bindings/zmk/rgb.h>\n");
+
+print("\n");
+print("\n");
+print("&led_strip { \n");
+print("\tchain-length = <10>; \n");
+print("};\n");
+
+print("\n");
+print("\n");
 
 
 print("/  {\n");
