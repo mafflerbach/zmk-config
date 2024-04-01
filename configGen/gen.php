@@ -1,10 +1,6 @@
 <?php
 
 
-
-
-
-
 $exceptions= [
     "KC_BSLS"  => '&kp BSLH',
     "KC_BTN1"  => '&mkp MB1',
@@ -30,16 +26,16 @@ $exceptions= [
     "KC_MS_R"  => '&kp RET',
     "KC_MS_U"  => '&kp RET',
     "KC_NO"    => '&trans',
-    "KC_P0"    => '&kp N0',
-    "KC_P1"    => '&kp N1',
-    "KC_P2"    => '&kp N2',
-    "KC_P3"    => '&kp N3',
-    "KC_P4"    => '&kp N4',
-    "KC_P5"    => '&kp N5',
-    "KC_P6"    => '&kp N6',
-    "KC_P7"    => '&kp N7',
-    "KC_P8"    => '&kp N8',
-    "KC_P9"    => '&kp N9',
+    "KC_0"    => '&kp N0',
+    "KC_1"    => '&kp N1',
+    "KC_2"    => '&kp N2',
+    "KC_3"    => '&kp N3',
+    "KC_4"    => '&kp N4',
+    "KC_5"    => '&kp N5',
+    "KC_6"    => '&kp N6',
+    "KC_7"    => '&kp N7',
+    "KC_8"    => '&kp N8',
+    "KC_9"    => '&kp N9',
     "KC_PAST"  => '&kp KP_ASTERISK',
     "KC_PDOT"  => '&kp KP_DOT',
     "KC_PENT"  => '&kp KP_ENTER',
@@ -116,10 +112,33 @@ print("/  {\n");
 print("    keymap {\n");
  print('           compatible =  "zmk,keymap" ;'. "\n");
     for ($i = 0; $i < count($layers); $i++) {
-
         if (!empty($layers[$i])) {
 print("layer_$i {\n");
 print(" bindings = <\n");
+
+            print("\n");
+
+            print(" // -----------------------------------------------------------------------------------------------------------------------------");
+            for ($k = 0; $k < count($layers[$i]); $k++) {
+                if ( $k == 0 ){
+            print("\n");
+                    print(" // | ");
+                } 
+                if (isset($exceptions[$layers[$i][$k]])){
+                    print($exceptions[$layers[$i][$k]]."|");
+                } else {
+                    print("&kp " . str_replace("KC_", "",$layers[$i][$k] ) ." |");
+                }
+                if($k == 11 ||$k == 25 || $k == 39 || $k == 55){
+                    print("\n // | ");
+                }
+            }
+            print("\n");
+            print(" // -----------------------------------------------------------------------------------------------------------------------------");
+            print("\n");
+            print("\n");
+
+
             for ($k = 0; $k < count($layers[$i]); $k++) {
                 if (isset($exceptions[$layers[$i][$k]])){
                     print($exceptions[$layers[$i][$k]]." ");
