@@ -88,9 +88,9 @@ $exceptions= [
 
 
 
-if (file_exists("./keyboard.json")) {
+if (file_exists("./test.json")) {
 
-    $content =json_decode( file_get_contents("./keyboard.json"), true);
+    $content =json_decode( file_get_contents("./test.json"), true);
 
 
     $layers = array_values($content['layers']);
